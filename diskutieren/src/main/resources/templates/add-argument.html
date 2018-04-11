@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Title</title>
+    <link href="../static/css/stylesheet.css" th:href="@{/css/stylesheet.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="grid-container-topic">
+    <div th:insert="~{header :: header}"></div>
+    <div class="main-item">
+        <form action="#" th:action="@{|/d/${discID}/${topicID}/add-argument2|}" th:object="${newArgument}" method="post">
+            <h3>Thesis:</h3>
+            <p><input type="text" th:field="*{these}"></p>
+            <h4>Example:</h4>
+            <p><input type="text" th:field="*{example}"></p>
+            <h4>Reason:</h4>
+            <p><input type="text" th:field="*{reason}"></p>
+            <h4>Is a pro argument:&nbsp;&nbsp;<input type="checkbox" th:field="*{isPro}"></h4>
+            <p><input type="submit" name="action" value="Submit" /></p>
+        </form>
+    </div>
+    <div class="main-item">
+        <a class="flat" th:href="@{|/d/${discID}/${topicID}|}">Back</a>
+    </div>
+</div>
+</body>
+</html>

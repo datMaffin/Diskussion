@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Title</title>
+    <link href="../static/css/stylesheet.css" th:href="@{/css/stylesheet.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="grid-container-topic">
+        <div th:insert="~{header :: header}"></div>
+        <div class="main-item">
+            <h2 th:text="${topic.name}">Topic Nr...</h2>
+        </div>
+        <div class="main-item">
+            <th:block th:each="arg : ${args}">
+                <div th:class="${arg.pro}? pro : contra">
+                    <h3>Thesis:</h3>
+                    <span th:text="${arg.thesis}"></span>
+                    <h4>Example:</h4>
+                    <span th:text="${arg.example}"></span>
+                    <h4>Reason:</h4>
+                    <span th:text="${arg.reason}"></span>
+                    <br/>
+                    <a class="flat" th:href="@{|/d/${discID}/${topicID}/${arg.argumentID}/up-vote|}">+</a>
+                    <span th:text="${arg.upvotes}"></span>
+                </div>
+            </th:block>
+
+        </div>
+        <div class="main-item">
+            <br/>
+            <a class="flat" href="" th:href="@{|/d/${discID}/${topicID}/add-argument|}">Add Argument</a>
+        </div>
+    </div>
+</body>
+</html>
