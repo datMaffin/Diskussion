@@ -1,6 +1,8 @@
 # Diskussion
+Initally created for the Cloud-Hackathon in 2018 organized by [Iteratec](https://www.iteratec.de)
 ## Idea
-A website you can share via copying a link to create a discussion with other people.
+The idea was to develop a website where people can easily create and invite other people to their 
+discussion by sharing a simple link.
 
 # Setup (in Azure)
 ## SQL-Server
